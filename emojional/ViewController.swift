@@ -10,11 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    let emojis = ["🤗": "happy", "🙃": "idk", "😭": "sad"]
+    
+
+    
+    @IBAction func happy(_ sender: UIButton) {
+       
+        let selectedEmotion = sender.titleLabel?.text
+        
+        let alertController = UIAlertController()
+        
+        UIAlertController(title: "happy", message: "FANTASTIC! So glad you're having such a great day!!", preferredStyle: UIAlertController.Style.alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        present(alertController, animated: true, completion: nil)
+
     }
+    
 
-
+    @IBAction func upsideDown(_ sender: UIButton) {
+        print("🙃🙃🙃")
+    }
+    
+    @IBAction func sad(_ sender: UIButton) {
+        print("Aww I'm sorry today was bad :( Stay positive and tomorrow will be better!")
+    }
 }
+
 
